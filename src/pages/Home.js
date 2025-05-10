@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import { RefHook } from '../components/RefHooks';
 
 export default function Home() {
@@ -11,6 +11,15 @@ export default function Home() {
     {id:4, name:'pratibha', location:'pune'},
     {id:5, name:'ankita', location:'pandharpur'}
   ]
+
+  useEffect(() => {
+    console.log('userdata changed');
+    return()=>{
+      console.log('unmount function called')
+    }
+
+  }, [userData])
+  
   return (
     <>
     <h2>Home page</h2>
